@@ -1,0 +1,35 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой WebXR-тур</title>
+  <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- Локация 1: Комната -->
+    <a-entity id="room">
+      <a-sky src="room.jpg"></a-sky>
+      <a-text value="Комната" position="0 2 -3" color="white"></a-text>
+      <a-cylinder position="2 1 -2" radius="0.3" height="0.05" color="blue"
+                  link="on: click; href: #street"></a-cylinder>
+      <a-text value="Выйти" position="2 1.5 -2" color="white"></a-text>
+    </a-entity>
+    
+    <!-- Локация 2: Улица -->
+    <a-entity id="street">
+      <a-sky src="street.jpg"></a-sky>
+      <a-text value="Улица" position="0 2 -3" color="white"></a-text>
+      <a-cylinder position="-2 1 -2" radius="0.3" height="0.05" color="red"
+                  link="on: click; href: #room"></a-cylinder>
+      <a-text value="Вернуться" position="-2 1.5 -2" color="white"></a-text>
+    </a-entity>
+    
+    <a-camera position="0 1.6 0">
+      <a-cursor></a-cursor>
+    </a-camera>
+  </a-scene>
+</body>
+</html>
